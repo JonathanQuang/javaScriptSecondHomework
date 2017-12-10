@@ -27,14 +27,18 @@ var DisplayItemName = function(){
 	var itemL = document.getElementsByTagName('li');
 	var len = itemL.length;
 	for (i = 0; i < len; i++){
+		
+		e = document.getElementsByTagName('li')[i].childNodes[0].nodeValue;
+		console.log(e);
+
 		itemL[i].addEventListener('mouseover', callback);
-		e = i;
-		//document.getElementsByTagName('li')[i].childNodes[0].getValue;
+
+
 		itemL[i].addEventListener('mouseout', changeBack);
 	}
 }
 
-
+//e = "hy";
 var changeHeading = function(e){
 	var orighead = heading.childNodes[0];
 	var newhead = document.createTextNode(e);
