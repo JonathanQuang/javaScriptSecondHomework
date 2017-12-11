@@ -74,13 +74,38 @@ for (i=0; i<items.length; i++){
 
 //---------------------
 
-var fib = function(){
 
+var fib = function(n){
+	if (n==0){
+		return 0;
+	}
+	if (n==1){
+		return 1;
+	}
+	else {
+		return fib(n-1) + fib(n-2);
+	}
 }
 
-var fibList = document.getElementsById('theFibList');
+var currentFibInd = 0;
+var fibList = document.getElementById('theFibList');
+//var fibButton = document.getElementById('')
+
+
+var fibListAdder = function(){
+	var node = document.createElement("LI");
+	var textnode = document.createTextNode(fib(currentFibInd));
+	currentFibInd++;
+	node.appendChild(textnode);
+	fibList.appendChild(node);
+}
+
+
 
 fibBut.addEventListener('click', fibListAdder);
+
+
+
 
 
 
