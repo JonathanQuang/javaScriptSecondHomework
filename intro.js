@@ -17,7 +17,6 @@ var addToList = function(){
 	node.appendChild(textnode);
 	//creates <li>hi</li>
 	
-	
 	//add event listeners for newly added elements to list
 	node.addEventListener('mouseover', changeHeading);
 	node.addEventListener('mouseout', changeBack);
@@ -25,6 +24,7 @@ var addToList = function(){
 	
 	theList.appendChild(node);	
 };
+
 
 //when the btn is clicked, addToList is called 
 b.addEventListener('click', addToList);
@@ -72,6 +72,15 @@ for (i=0; i<items.length; i++){
 	items[i].addEventListener('click', removeElement);
 }
 
+//---------------------
+
+var fib = function(){
+
+}
+
+var fibList = document.getElementsById('theFibList');
+
+fibBut.addEventListener('click', fibListAdder);
 
 
 
