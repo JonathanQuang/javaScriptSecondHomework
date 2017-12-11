@@ -1,12 +1,28 @@
 //thelist
-var theList = document.getElementById('thelist')
+var theList = document.getElementById('thelist');
+console.log('result from elementbyid thelist');
+console.log(theList);
+
+//for testing purposes
+var maxItemNum = 8;
 
 
 //add an element to the list
 var addToList = function(){
 	var node = document.createElement("LI");
-	var textnode = document.createTextNode('hi');
+	//creates <li></li> node
+	var textnode = document.createTextNode('item ' + maxItemNum);
+	maxItemNum++;
+	//creates "hi"
 	node.appendChild(textnode);
+	//creates <li>hi</li>
+	
+	
+	//add event listeners for newly added elements to list
+	node.addEventListener('mouseover', changeHeading);
+	node.addEventListener('mouseout', changeBack);
+	node.addEventListener('click', removeElement);
+	
 	theList.appendChild(node);	
 };
 
@@ -16,11 +32,20 @@ b.addEventListener('click', addToList);
 
 //heading
 var heading = document.getElementById('h');
+console.log('result from getElementById("h")');
+console.log(heading);
+console.log('result from heading.childNodes');
+console.log(heading.childNodes);
 
 
 //swap the original text in the header with the new text
 var changeHeading = function(){
 	var orighead = heading.childNodes[0];
+	//console.log('result from this')
+	//console.log(this)
+	//this apparently refers to the node <li>item # </li>
+	//console.log('result from this.childNodes');
+	//console.log(this.childNodes);
 	var newhead1 = document.createTextNode(this.childNodes[0].nodeValue);
 	h.innerHTML = this.childNodes[0].nodeValue;
 }
