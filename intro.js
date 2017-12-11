@@ -74,7 +74,7 @@ for (i=0; i<items.length; i++){
 
 //---------------------
 
-
+//return the next fib number
 var fib = function(n){
 	if (n==0){
 		return 0;
@@ -88,11 +88,13 @@ var fib = function(n){
 }
 
 var currentFibInd = 0;
+
+//get fibList
 var fibList = document.getElementById('theFibList');
-//var fibButton = document.getElementById('')
 
-
+//add the next fib number to the fibList
 var fibListAdder = function(){
+	//creates <li></li> node
 	var node = document.createElement("LI");
 	var textnode = document.createTextNode(fib(currentFibInd));
 	currentFibInd++;
@@ -100,8 +102,7 @@ var fibListAdder = function(){
 	fibList.appendChild(node);
 }
 
-
-
+//when fibBut is clicked, fibListAdder is called and the next fib number is added
 fibBut.addEventListener('click', fibListAdder);
 
 
